@@ -17,4 +17,13 @@ export class ContadorComponent {
     this.valorContador--;
     this.eventoContador.emit(this.valorContador);
   }
+
+  reiniciar(): void {
+    this.valorContador = 0;
+    this.eventoContador.emit(this.valorContador);
+  }
+
+  appValorEventBinding($event: any): void {
+    this.eventoContador.emit($event.target.value);
+  }
 }
